@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chorradas</title>
+</head>
+
+<body>
+Pagina chorra
+</body>
+<hr>
+<div sec:authorize="hasRole('Manger')">
+    <p>
+        <a th.href="@{/systems}"> IT Systems</a>
+        Only for systems workers
+    </p>
+</div>
+<hr>
+<div sec:authorize="hasRole('Admin')">
+    <p>
+        <a th.href="@{/leaders}"> Leaders</a>
+        Only for leaders
+    </p>
+</div>
+<hr>
+<div>
+    <form action="#" th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout">
+    </form>
+</div>
+
+</html>
